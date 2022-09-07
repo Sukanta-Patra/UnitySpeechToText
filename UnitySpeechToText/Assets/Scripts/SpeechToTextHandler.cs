@@ -16,14 +16,18 @@ public class SpeechToTextHandler : MonoBehaviour
     {
         displayText.text = "";
         SetupSpeechEngine(langCode);
+        //SpeechToText.Instance.onPartialResultsCallback = OnPartialSpeech;
+        SpeechToText.Instance.onResultCallback = OnSpeechCompletion;
+
         SetButtonVisibility(false);
+
+        CheckAndRequestPermission();
     }
 
     private void SetupSpeechEngine(string _langCode)
     {
-        SpeechToText.Instance.Setting(_langCode);
-        SpeechToText.Instance.onPartialResultsCallback = OnPartialSpeech;
-        SpeechToText.Instance.onResultCallback = OnSpeechCompletion;
+        Debug.Log("TEST5: Setup()");
+        SpeechToText.Instance.Setting(_langCode);       
     }
 
     private void CheckAndRequestPermission()
@@ -43,6 +47,7 @@ public class SpeechToTextHandler : MonoBehaviour
         Debug.Log("TEST3: StartListening()");
         Toast.instance.SetToast("Listening...");
         SpeechToText.Instance.StartRecording();
+        SetButtonVisibility(false);
     }
     //
     public void StopListening()
@@ -52,6 +57,7 @@ public class SpeechToTextHandler : MonoBehaviour
 #if UNITY_EDITOR
         displayText.text = "Some recorded text will be shown here in Build!";
 #endif
+        SetButtonVisibility(true);
     }
 
     /// <summary>
@@ -60,6 +66,8 @@ public class SpeechToTextHandler : MonoBehaviour
     /// <param name="_text"></param>
     private void OnSpeechCompletion(string _text)
     {
+        Debug.Log("TEST4: OnSpeechCompletion: " + _text);
+        Toast.instance.SetToast(_text);
         displayText.text = _text;
     }
 
@@ -69,6 +77,8 @@ public class SpeechToTextHandler : MonoBehaviour
     /// <param name="_text"></param>
     private void OnPartialSpeech(string _text)
     {
+        Debug.Log("TEST4: OnPartialSpeech: " + _text);
+        Toast.instance.SetToast(_text);
         displayText.text = _text;
     }
 
