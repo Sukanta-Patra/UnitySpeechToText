@@ -1780,18 +1780,6 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 685963950}
           m_TargetAssemblyTypeName: SpeechToTextHandler, Assembly-CSharp
-          m_MethodName: SetButtonVisibility
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 685963950}
-          m_TargetAssemblyTypeName: SpeechToTextHandler, Assembly-CSharp
           m_MethodName: StartListening
           m_Mode: 1
           m_Arguments:
@@ -1817,18 +1805,6 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 685963950}
-          m_TargetAssemblyTypeName: SpeechToTextHandler, Assembly-CSharp
-          m_MethodName: SetButtonVisibility
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
           m_CallState: 2
 --- !u!1 &1276768704
 GameObject:
